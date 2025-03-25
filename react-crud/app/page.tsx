@@ -63,7 +63,6 @@ export default function TodoList() {
       .update({ isCompleted: !status })
       .match({ id })
       .select();
-    console.log(data);
     if (error) return toast.error(error.message);
     if (data && data.length > 0)
       setTodos(todos.map((todo) => (todo.id === id ? data[0] : todo)));
